@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction System</title>
+
+    <style>
+        body{
+            background-image: url("{% static 'image.png' %}");           
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            margin-top: 200px;
+            font-family: Arial, sans-serif;
+        }
+
+        #typing-text {
+            font-size: 48px;
+            font-weight: bold;
+            border-right: 4px solid white;
+            white-space: nowrap;
+            display: inline-block;
+            overflow: hidden;
+            padding-right: 10px;
+        }
+
+        input[type=submit]{
+            background-color: #4dc3ff;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-size: 20px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        input[type=submit]:hover{
+            background-color: #1ca3e6;
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsive */
+        @media(max-width:768px){
+            #typing-text{
+                font-size: 30px;
+            }
+        }
+
+        @media(max-width:480px){
+            #typing-text{
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="typing-text"></div>
+
+    <form action="predict">
+        <input type="submit" value="Let's Get Started">
+    </form>
+
+
+<script>
+    const text = "Welcome to Diabetes Risk Prediction System";
+    const target = document.getElementById("typing-text");
+    let index = 0;
+
+    function typeEffect() {
+        if (index < text.length) {
+            target.textContent += text.charAt(index);
+            index++;
+
+            // random typing delay (human style)
+            let delay = Math.random() * (150 - 50) + 50;
+
+            setTimeout(typeEffect, delay);
+        }
+    }
+
+    typeEffect();
+
+    // blinking cursor
+    setInterval(() => {
+        target.style.borderRight = target.style.borderRight ? "" : "4px solid white";
+    }, 500);
+</script>
+
+</body>
+</html>
