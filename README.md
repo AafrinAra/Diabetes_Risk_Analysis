@@ -12,7 +12,6 @@
 - Technologies Used  
 - Installation  
 
----
 
 ## 🔍 Overview
 
@@ -42,7 +41,6 @@ The motivation behind this project was:
 - To apply **real-world machine learning workflows**  
 - To work on a **socially beneficial healthcare project**
 
----
 
 ## 🎓 Learning Objectives
 
@@ -56,7 +54,6 @@ This project helped in understanding and applying:
 - Model Evaluation  
 - Web Deployment using Django  
 
----
 
 ## ⚙ Technical Aspects
 
